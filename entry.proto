@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package entry;
+
+service EntryService {
+    rpc CreateEntry(Entry) returns (Entry);
+    rpc ReadAllEntry(Empty) returns (EntryList);
+    rpc UpdateEntry(UpdateEntryRequest) returns (Entry);
+    rpc DeleteEntry(EntryRequest) returns (Entry);
+}
+
+message Empty {}
+
+message Entry {
+    string _id = 1;
+    string name = 2;
+    int32 score = 3;
+}
+
+message CreateEntryResponse {
+    string _id = 1;
+    string name = 2;
+    int32 score = 3;
+}
+
+message UpdateEntryRequest {
+    string _id = 1;
+    string name = 2;
+    int32 score = 3;
+}
+
+message EntryRequest {
+    string _id = 1;
+}
+
+message EntryList {
+    repeated Entry entries = 1;
+}
