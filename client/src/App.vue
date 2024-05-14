@@ -55,7 +55,7 @@
     <h2>Everyones result:</h2>
     <ul>
       <li v-for="entry in entries" :key="entry._id">
-        Name: {{ entry.name }} - Score: {{ entry.score }}
+        Name: {{ entry.name }} - Score: {{ entry.score }}  - <button>Delete</button> - <button>Edit</button>
       </li>
     </ul>
   </div>
